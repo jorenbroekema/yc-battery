@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Battery component</title>
+  </head>
+  <body>
+    <style>
+      yc-battery {
+        margin: 0 10px;
+      }
+    </style>
+    <div id="myApp" class="page-container" style="display: flex"></div>
+    <script type="module">
+      import { html, render } from 'lit-html';
+
+      import '../src/YCBattery.js';
+
+      const app = document.getElementById('myApp');
+
+      const template = html`
+        <yc-battery .fillAmount=${10}></yc-battery>
+        <yc-battery .fillAmount=${30}></yc-battery>
+        <yc-battery .fillAmount=${60}></yc-battery>
+        <yc-battery .fillAmount=${95}></yc-battery>
+      `;
+
+      render(template, app);
+    </script>
+  </body>
+</html>
