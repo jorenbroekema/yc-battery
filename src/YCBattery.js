@@ -5,8 +5,16 @@ export class YCBattery extends LitElement {
     return {
       fillAmount: {
         type: Number
+      },
+      scaleSize: {
+        type: Number
       }
     };
+  }
+
+  constructor() {
+    super();
+    this.scaleSize = 1;
   }
 
   static get styles() {
@@ -15,30 +23,15 @@ export class YCBattery extends LitElement {
         display: flex;
         align-items: flex-end;
         position: relative;
-        margin: 8px 0 auto;
-        width: 50px;
-        height: 125px;
+        margin: 20px 0 auto;
         border-style: solid;
-        border-width: 5px;
-        border-radius: 10px;
       }
 
       .battery-top {
-        width: 20px;
-        height: 8px;
         position: absolute;
-        top: -13px;
-        left: 10px;
         border-style: solid;
-        border-width: 5px;
         border-bottom-style: hidden;
-        border-radius: 5px;
         background-color: white;
-      }
-
-      .battery-content {
-        width: 40px;
-        margin: 5px auto;
       }
     `;
   }
@@ -56,15 +49,27 @@ export class YCBattery extends LitElement {
       <style>
         .battery-holder {
           border-color: hsl(${this.hue}, 60%, 50%);
+          width: ${50 * this.scaleSize}px;
+          height: ${125 * this.scaleSize}px;
+          border-width: ${5 * this.scaleSize}px;
+          border-radius: ${10 * this.scaleSize}px;
         }
 
         .battery-top {
           border-color: hsl(${this.hue}, 60%, 50%);
+          left: ${10 * this.scaleSize}px;
+          top: ${Math.ceil(-13 * this.scaleSize)}px;
+          width: ${20 * this.scaleSize}px;
+          height: ${8 * this.scaleSize}px;
+          border-width: ${5 * this.scaleSize}px;
+          border-radius: ${5 * this.scaleSize}px;
         }
 
         .battery-content {
-          height: ${this.height}px;
+          height: ${this.height * this.scaleSize}px;
+          width: ${40 * this.scaleSize}px;
           background-color: hsl(${this.hue}, 60%, 50%);
+          margin: ${5 * this.scaleSize}px;
         }
       </style>
       <div class="battery-holder">

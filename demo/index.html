@@ -12,7 +12,7 @@
         margin: 0 10px;
       }
     </style>
-    <div id="myApp" class="page-container" style="display: flex"></div>
+    <div id="myApp" class="page-container"></div>
     <script type="module">
       import { html, render } from 'lit-html';
 
@@ -21,10 +21,20 @@
       const app = document.getElementById('myApp');
 
       const template = html`
-        <yc-battery .fillAmount=${10}></yc-battery>
-        <yc-battery .fillAmount=${30}></yc-battery>
-        <yc-battery .fillAmount=${60}></yc-battery>
-        <yc-battery .fillAmount=${95}></yc-battery>
+        <h3>Default scale</h3>
+        <div style="display: flex">
+          <yc-battery .fillAmount=${10}></yc-battery>
+          <yc-battery .fillAmount=${30}></yc-battery>
+          <yc-battery .fillAmount=${60}></yc-battery>
+          <yc-battery .fillAmount=${95}></yc-battery>
+        </div>
+        <h3>Scaled 1.5x</h3>
+        <div style="display: flex">
+          <yc-battery .scaleSize=${1.5} .fillAmount=${10}></yc-battery>
+          <yc-battery .scaleSize=${1.5} .fillAmount=${30}></yc-battery>
+          <yc-battery .scaleSize=${1.5} .fillAmount=${60}></yc-battery>
+          <yc-battery .scaleSize=${1.5} .fillAmount=${95}></yc-battery>
+        </div>
       `;
 
       render(template, app);
