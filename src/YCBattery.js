@@ -1,6 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
 
-class YCBattery extends LitElement {
+export class YCBattery extends LitElement {
   static get properties() {
     return {
       fillAmount: {
@@ -74,5 +74,3 @@ class YCBattery extends LitElement {
     `;
   }
 }
-
-customElements.define('yc-battery', YCBattery);
