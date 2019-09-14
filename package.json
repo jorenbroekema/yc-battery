@@ -1,18 +1,18 @@
 {
+  "name": "yc-battery",
+  "version": "0.1.0",
+  "main": "index.js",
   "dependencies": {
     "lit-element": "^2.2.1"
   },
   "devDependencies": {
     "es-dev-server": "1.10.4"
   },
-  "name": "yc-battery",
-  "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "start": "es-dev-server --open --watch --node-resolve --app-index demo/index.html"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "author": "Joren Broekema <joren.broekema@gmail.com>",
+  "license": "MIT",
+  "description": "A simple example webcomponent with lit-element"
 }
