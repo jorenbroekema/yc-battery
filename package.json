@@ -1,12 +1,12 @@
 {
   "name": "yc-battery",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "dependencies": {
     "lit-element": "^2.2.1"
   },
   "devDependencies": {
-    "es-dev-server": "1.10.4"
+    "es-dev-server": "^1.46.2"
   },
   "scripts": {
     "start": "es-dev-server --open --watch --node-resolve --app-index demo/index.html"
